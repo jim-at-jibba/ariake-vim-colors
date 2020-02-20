@@ -414,12 +414,9 @@ exe "hi! typescriptExport"            .s:fmt_ital   .s:fg_purple   .s:bg_none
 
 " json syntax highlighting
 " ---------------------------------------------------------------------
-exe "hi! jsonPadding"                 .s:fmt_none   .s:fg_purple   .s:bg_none
 exe "hi! jsonString"                  .s:fmt_none   .s:fg_cyan     .s:bg_none
-exe "hi! jsonTest"                    .s:fmt_none   .s:fg_purple   .s:bg_none
-exe "hi! jsonEscape"                  .s:fmt_none   .s:fg_purple   .s:bg_none
-exe "hi! jsonNumber"                  .s:fmt_none   .s:fg_purple   .s:bg_none
+exe "hi! jsonNumber"                  .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! jsonBraces"                  .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! jsonNull"                    .s:fmt_none   .s:fg_purple   .s:bg_none
 exe "hi! jsonBoolean"                 .s:fmt_none   .s:fg_purple   .s:bg_none
-exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow   .s:bg_none
