@@ -319,7 +319,7 @@ exe "hi! DiffText"       .s:fmt_bold   .s:fg_base01  .s:bg_none
 exe "hi! Directory"      .s:fmt_none   .s:fg_base0  .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_pinkdk  .s:bg_none
 exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0   .s:bg_base02
-exe "hi! Folded"         .s:fmt_undb   .s:fg_cyan  .s:bg_none  .s:sp_base03
+exe "hi! Folded"         .s:fmt_undb   .s:fg_cyan  .s:bg_yellow  .s:sp_base03
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_base03 .s:bg_bluedk
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base03
 exe "hi! MatchParen"     .s:fmt_undr   .s:fg_bluelt    .s:bg_none
