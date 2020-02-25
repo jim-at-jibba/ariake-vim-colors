@@ -38,13 +38,14 @@ endif
 syntax enable
 colorscheme ariake
 ```
+
 ## Vim
 
 I have concetrated on the languages I write (JS,TS, Docker, JSON) but should be ok for others. If not drop my a line in the issues and let me know.
  
 I will add more languages as I need them but happpy to accept PRs.
 
-This theme leans of [vim-polyglot] form the languages
+This theme leans of [vim-polyglot](https://github.com/sheerun/vim-polyglot) for the languages support
 
 ### JS
 ![js](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/js.png)
