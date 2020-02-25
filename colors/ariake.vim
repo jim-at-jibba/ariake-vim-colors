@@ -33,6 +33,7 @@
 " pink       #e89dfc
 " bluedk     #79829f
 " yellow     #85b1df                           orangelt
+" orange     #fbdf00
 " green      #69f0ad                           green
 
 " *these are the names of the first 16 ANSI colors terminals allow you to change
@@ -69,6 +70,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:pink      = "#e89dfc"
   let s:bluedk    = "#79829f"
   let s:yellow    = "#85b1df"
+  let s:orange    = "#fbdf00"
   let s:green     = "#69f0ad"
 
 else " 256 xterm colors as backup
@@ -122,6 +124,7 @@ elseif has('terminal')
         \"#7f7ce3",
         \"#70E1E8",
         \"#B7C5D3",
+        \"#fbdf00"
         \ ]
 endif
 
@@ -159,6 +162,7 @@ exe "let s:bg_pinkdk    = ' ".s:vmode."bg=".s:pinkdk      ."'"
 exe "let s:bg_pink      = ' ".s:vmode."bg=".s:pink        ."'"
 exe "let s:bg_bluedk    = ' ".s:vmode."bg=".s:bluedk      ."'"
 exe "let s:bg_yellow    = ' ".s:vmode."bg=".s:yellow      ."'"
+exe "let s:bg_orange    = ' ".s:vmode."bg=".s:orange      ."'"
 exe "let s:bg_green     = ' ".s:vmode."bg=".s:green       ."'"
 
 exe "let s:fg_none      = ' ".s:vmode."fg=".s:none        ."'"
@@ -177,6 +181,7 @@ exe "let s:fg_pinkdk    = ' ".s:vmode."fg=".s:pinkdk      ."'"
 exe "let s:fg_pink      = ' ".s:vmode."fg=".s:pink        ."'"
 exe "let s:fg_bluedk    = ' ".s:vmode."fg=".s:bluedk      ."'"
 exe "let s:fg_yellow    = ' ".s:vmode."fg=".s:yellow      ."'"
+exe "let s:fg_orange    = ' ".s:vmode."fg=".s:orange      ."'"
 exe "let s:fg_green     = ' ".s:vmode."fg=".s:green       ."'"
 
 exe "let s:fmt_none     = ' ".s:vmode."=NONE".          " term=NONE".    "'"
@@ -208,6 +213,7 @@ if has("gui_running")
   exe "let s:sp_pink      = ' guisp=".s:pink        ."'"
   exe "let s:sp_bluedk    = ' guisp=".s:bluedk      ."'"
   exe "let s:sp_yellow    = ' guisp=".s:yellow      ."'"
+  exe "let s:sp_orange    = ' guisp=".s:orange      ."'"
   exe "let s:sp_green     = ' guisp=".s:green       ."'"
 else
   let s:sp_none       = ""
@@ -226,6 +232,7 @@ else
   let s:sp_pink       = ""
   let s:sp_bluedk     = ""
   let s:sp_yellow     = ""
+  let s:sp_orange     = ""
   let s:sp_green      = ""
 endif
 
@@ -374,16 +381,45 @@ exe "hi! htmlTagName"    .s:fmt_none   .s:fg_cyan    .s:bg_none
 
 " javascript syntax highlighting
 " ---------------------------------------------------------------------
-exe "hi! jsArrowFunction" .s:fmt_none   .s:fg_green     .s:bg_none
-exe "hi! jsAsyncKeyword" .s:fmt_none   .s:fg_cyan     .s:bg_none
-exe "hi! jsExportDefault" .s:fmt_none   .s:fg_blue     .s:bg_none
-exe "hi! jsFunction"     .s:fmt_none   .s:fg_cyan     .s:bg_none
-exe "hi! jsFuncArgs"     .s:fmt_none   .s:fg_base0     .s:bg_none
-exe "hi! jsFuncCall"     .s:fmt_none   .s:fg_base0     .s:bg_none
-exe "hi! jsModuleKeyword" .s:fmt_none   .s:fg_base00     .s:bg_none
-exe "hi! jsString"       .s:fmt_none   .s:fg_blue     .s:bg_none
-exe "hi! jsStorageClass" .s:fmt_none   .s:fg_cyan     .s:bg_none
-exe "hi! jsVariableDef"  .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! jsStorageClass"    .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsVariableDef"     .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! jsOperatorKeyword" .s:fmt_ital   .s:fg_base0     .s:bg_none
+exe "hi! jsOperator"        .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! jsBooleanTrue"     .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! jsBooleanFalse"     .s:fmt_none   .s:fg_pink     .s:bg_none
+
+exe "hi! jsImport"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsExport"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsExportDefault"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsFrom"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsCommentTodo"     .s:fmt_ital   .s:fg_pink     .s:bg_none
+
+exe "hi! jsString"     .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! jsTemplateString"     .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! jsTaggedTemplate"     .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! jsNumber"     .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! jsFloat"     .s:fmt_none   .s:fg_pink     .s:bg_none
+
+exe "hi! jsObjectShorthandProp"     .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! jsObjectKey"     .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! jsObjectSeparator"     .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! jsObjectValue"     .s:fmt_none   .s:fg_yellow     .s:bg_none
+
+exe "hi! jsConditional"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsSwitchCase"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsTry"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsFinally"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsCatch"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsException"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! jsAsyncKeyword"     .s:fmt_ital   .s:fg_purple     .s:bg_none
+
+exe "hi! jsBrackets"     .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! jsParens"     .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! jsParensIfElse"     .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! jsBraces"     .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! jsTryCatchBraces"     .s:fmt_none   .s:fg_pink     .s:bg_none
 
 " typescript syntax highlighting
 " ---------------------------------------------------------------------
@@ -402,7 +438,7 @@ exe "hi! typescriptArrowFunc"         .s:fmt_none   .s:fg_base0   .s:bg_none
 
 exe "hi! typescriptBraces"            .s:fmt_none   .s:fg_purple   .s:bg_none
 exe "hi! typescriptSymbols"           .s:fmt_none   .s:fg_cyan   .s:bg_none
-exe "hi! typescriptParens"            .s:fmt_none   .s:fg_pink   .s:bg_none
+exe "hi! typescriptParens"            .s:fmt_none   .s:fg_orange   .s:bg_none
 exe "hi! typescriptCommentTodo"       .s:fmt_none   .s:fg_pink   .s:bg_none
 exe "hi! typescriptTemplate"          .s:fmt_none   .s:fg_cyan   .s:bg_none
 exe "hi! typescriptIdentifier"        .s:fmt_none   .s:fg_cyan   .s:bg_none
