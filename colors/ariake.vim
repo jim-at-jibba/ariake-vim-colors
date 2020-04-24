@@ -456,3 +456,9 @@ exe "hi! jsonBraces"                  .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! jsonNull"                    .s:fmt_none   .s:fg_purple   .s:bg_none
 exe "hi! jsonBoolean"                 .s:fmt_none   .s:fg_purple   .s:bg_none
 exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow   .s:bg_none
+
+
+" html syntax highlighting
+" ---------------------------------------------------------------------
+exe "hi! htmlTagName"                 .s:fmt_none   .s:fg_bluelt   .s:bg_none
+exe "hi! htmlArg"                     .s:fmt_ital   .s:fg_pink     .s:bg_none
