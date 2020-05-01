@@ -447,6 +447,18 @@ exe "hi! typescriptStatementKeyword"  .s:fmt_ital   .s:fg_purple   .s:bg_none
 exe "hi! typescriptOperator"          .s:fmt_ital   .s:fg_green   .s:bg_none
 exe "hi! typescriptExport"            .s:fmt_ital   .s:fg_purple   .s:bg_none
 
+highlight def link tsxTag htmlTag
+highlight def link tsxTagName Function
+highlight def link tsxIntrinsicTagName htmlTagName
+highlight def link tsxString String
+highlight def link tsxNameSpace Function
+highlight def link tsxCommentInvalid Error
+highlight def link tsxBlockComment Comment
+highlight def link tsxLineComment Comment
+highlight def link tsxAttrib Type
+highlight def link tsxEscJs tsxEscapeJs
+highlight def link tsxCloseTag htmlTag
+highlight def link tsxCloseString Identifier
 
 " json syntax highlighting
 " ---------------------------------------------------------------------
