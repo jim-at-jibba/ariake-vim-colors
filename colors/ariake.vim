@@ -20,6 +20,7 @@
 "
 " ARIAKE     HEX      XTERM/HEX   HSB         NAME*
 " ---------- -------  ----------- ----------- ----------
+" base04     #fafafa   235 #262626 208  34  17 black
 " base03     #2a2c37   235 #262626 208  34  17 black
 " base02     #666973   237 #3a3a3a 201  21  29 brblack
 " base01     #9fa4ab   239 #4e4e4e 209  31  37
@@ -56,6 +57,7 @@ let s:none = "NONE"
 " Prefer neovim termguicolors, but support gui_running
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:vmode = "gui"
+  let s:base04    = "#fafafa"
   let s:base03    = "#252635"
   let s:base02    = "#666973"
   let s:base01    = "#0f1a3121"
@@ -131,6 +133,9 @@ endif
 " Formatting options and null values for passthrough effect "
 " ---------------------------------------------------------------------
     let s:back            = s:base03
+    if &background == "light"
+      let s:back            = s:base04
+    endif
     let s:none            = "NONE"
     let s:t_none          = "NONE"
     let s:n               = "NONE"
@@ -183,6 +188,11 @@ exe "let s:fg_bluedk    = ' ".s:vmode."fg=".s:bluedk      ."'"
 exe "let s:fg_yellow    = ' ".s:vmode."fg=".s:yellow      ."'"
 exe "let s:fg_orange    = ' ".s:vmode."fg=".s:orange      ."'"
 exe "let s:fg_green     = ' ".s:vmode."fg=".s:green       ."'"
+
+if &background == "light"
+  exe "let s:fg_base00    = ' ".s:vmode."fg=".s:pink      ."'"
+  exe "let s:fg_base0     = ' ".s:vmode."fg=".s:purple       ."'"
+endif
 
 exe "let s:fmt_none     = ' ".s:vmode."=NONE".          " term=NONE".    "'"
 exe "let s:fmt_bold     = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b."'"
@@ -311,13 +321,16 @@ exe "hi! Todo"           .s:fmt_revb   .s:fg_base01 .s:bg_none
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
 "  TODO Missing or Noncanonical: SpecialKey, Nontext, Statusline, ErrorMsg, MoreMsg, Modemsg, LineNr, Question, VertSplit, VerticalNOS, WarningMsg, WildMenu, FoldColumn, SignColumn, Conceal, Spell*, PmenuSel, PmenuSBar, PmenuThumb, Tab*, Cursor*, ColorColumn,
+if &background == "light"
+  exe "let s:bg_base03    = ' ".s:vmode."bg=".s:base04      ."'"
+endif
 "  TODO Improve diff settings
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_cyan
 hi! link lCursor Cursor
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_blue   .s:bg_cyan
-exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_purple
+exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_green
 exe "hi! CursorLineNR"   .s:fmt_none   .s:fg_base00 .s:bg_base03
 exe "hi! DiffAdd"        .s:fmt_none   .s:fg_none  .s:bg_none
 exe "hi! DiffChange"     .s:fmt_bold   .s:fg_none    .s:bg_none
@@ -357,6 +370,12 @@ exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none    .s:bg_base02 .s:fmt_revb
 exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_cyan     .s:bg_none
 exe "hi! WildMenu"       .s:fmt_none   .s:fg_base01  .s:bg_base02 .s:fmt_revb
 
+if &background == "light"
+  exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_cyan
+  exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+  exe "hi! String"         .s:fmt_none   .s:fg_blue .s:bg_none
+endif
+
 " vim syntax highlighting
 " ---------------------------------------------------------------------
 exe "hi! vimCommand"     .s:fmt_none   .s:fg_cyan     .s:bg_none
@@ -378,6 +397,11 @@ exe "hi! htmlEndTag"     .s:fmt_none   .s:fg_base0    .s:bg_none
 exe "hi! htmlH2"         .s:fmt_none   .s:fg_base00    .s:bg_none
 exe "hi! htmlTag"        .s:fmt_none   .s:fg_base0    .s:bg_none
 exe "hi! htmlTagName"    .s:fmt_none   .s:fg_cyan    .s:bg_none
+
+if &background == "light"
+  exe "hi! htmlEndTag"     .s:fmt_none   .s:fg_pink    .s:bg_none
+  exe "hi! htmlTag"        .s:fmt_none   .s:fg_pink    .s:bg_none
+endif
 
 " javascript syntax highlighting
 " ---------------------------------------------------------------------
@@ -421,6 +445,17 @@ exe "hi! jsParensIfElse"     .s:fmt_none   .s:fg_orange     .s:bg_none
 exe "hi! jsBraces"     .s:fmt_none   .s:fg_orange     .s:bg_none
 exe "hi! jsTryCatchBraces"     .s:fmt_none   .s:fg_pink     .s:bg_none
 
+if &background == "light"
+  exe "hi! jsOperatorKeyword" .s:fmt_ital   .s:fg_pink     .s:bg_none
+  exe "hi! jsObjectKey"     .s:fmt_none   .s:fg_pink     .s:bg_none
+  exe "hi! jsObjectSeparator"     .s:fmt_none   .s:fg_pink     .s:bg_none
+  exe "hi! jsString"     .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! jsTemplateString"     .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! jsTaggedTemplate"     .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_blue     .s:bg_none
+endif
+
 " typescript syntax highlighting
 " ---------------------------------------------------------------------
 exe "hi! typescriptAssertType"        .s:fmt_none   .s:fg_pink     .s:bg_none
@@ -446,6 +481,13 @@ exe "hi! typescriptVariable"          .s:fmt_ital   .s:fg_purple   .s:bg_none
 exe "hi! typescriptStatementKeyword"  .s:fmt_ital   .s:fg_purple   .s:bg_none
 exe "hi! typescriptOperator"          .s:fmt_ital   .s:fg_green   .s:bg_none
 exe "hi! typescriptExport"            .s:fmt_ital   .s:fg_purple   .s:bg_none
+
+if &background == "light"
+  exe "hi! typescriptFuncName"          .s:fmt_none   .s:fg_pink   .s:bg_none
+  exe "hi! typescriptArrowFuncArg"      .s:fmt_none   .s:fg_pink   .s:bg_none
+  exe "hi! typescriptArrowFunc"         .s:fmt_none   .s:fg_pink   .s:bg_none
+  exe "hi! typescriptParens"            .s:fmt_none   .s:fg_blue   .s:bg_none
+endif
 
 highlight def link tsxTag htmlTag
 highlight def link tsxTagName Function
