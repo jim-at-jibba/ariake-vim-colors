@@ -58,7 +58,7 @@ let s:none = "NONE"
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:vmode = "gui"
   let s:base04    = "#fafafa"
-  let s:base03    = "#252635"
+  let s:base03    = "#292d36"
   let s:base02    = "#666973"
   let s:base01    = "#0f1a3121"
   let s:base00    = "#f1f1f1"
@@ -73,7 +73,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:bluedk    = "#79829f"
   let s:yellow    = "#85b1df"
   let s:orange    = "#fbdf00"
-  let s:green     = "#69f0ad"
+  let s:green     = "#48afa7"
 
 else " 256 xterm colors as backup
   let s:vmode     = "cterm"
@@ -88,7 +88,7 @@ endif
 if has("nvim")
   let g:terminal_color_0 =  "#2a2c37" " black
   let g:terminal_color_1 =  "#7f7ce3" " red
-  let g:terminal_color_2 =  "#69f0ad" " green
+  let g:terminal_color_2 =  "#48afa7" " green
   let g:terminal_color_3 =  "#e89dfc" " orangelt
   let g:terminal_color_4 =  "#4f71ff" " blue
   let g:terminal_color_5 =  "#7f7ce3" " reddk
@@ -96,7 +96,7 @@ if has("nvim")
   let g:terminal_color_7 =  "#f3faff" " white
   let g:terminal_color_8 =  "#666973" " brblack
   let g:terminal_color_9 =  "#7f7ce3" " brred
-  let g:terminal_color_10 = "#69f0ad" " brgreen
+  let g:terminal_color_10 = "#48afa7" " brgreen
   let g:terminal_color_11 = "#e89dfc" " brorangelt
   let g:terminal_color_12 = "#4f71ff" " brblue
   let g:terminal_color_13 = "#986da9" " brreddk
@@ -120,7 +120,7 @@ elseif has('terminal')
         \"#f3faff",
         \"#666973",
         \"#7f7ce3",
-        \"#69f0ad",
+        \"#48afa7",
         \"#e89dfc",
         \"#4f71ff",
         \"#7f7ce3",
@@ -373,7 +373,7 @@ exe "hi! WildMenu"       .s:fmt_none   .s:fg_base01  .s:bg_base02 .s:fmt_revb
 if &background == "light"
   exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_cyan
   exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
-  exe "hi! String"         .s:fmt_none   .s:fg_blue .s:bg_none
+  exe "hi! String"         .s:fmt_none   .s:fg_green .s:bg_none
 endif
 
 " vim syntax highlighting
@@ -449,11 +449,11 @@ if &background == "light"
   exe "hi! jsOperatorKeyword" .s:fmt_ital   .s:fg_pink     .s:bg_none
   exe "hi! jsObjectKey"     .s:fmt_none   .s:fg_pink     .s:bg_none
   exe "hi! jsObjectSeparator"     .s:fmt_none   .s:fg_pink     .s:bg_none
-  exe "hi! jsString"     .s:fmt_none   .s:fg_blue     .s:bg_none
-  exe "hi! jsTemplateString"     .s:fmt_none   .s:fg_blue     .s:bg_none
-  exe "hi! jsTaggedTemplate"     .s:fmt_none   .s:fg_blue     .s:bg_none
-  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_blue     .s:bg_none
-  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! jsString"     .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! jsTemplateString"     .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! jsTaggedTemplate"     .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! jsObjectKeyString"     .s:fmt_none   .s:fg_green     .s:bg_none
 endif
 
 " typescript syntax highlighting
