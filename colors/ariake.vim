@@ -86,7 +86,7 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#2a2c37" " black
+  let g:terminal_color_0 =  "#292d36" " black
   let g:terminal_color_1 =  "#7f7ce3" " red
   let g:terminal_color_2 =  "#48afa7" " green
   let g:terminal_color_3 =  "#e89dfc" " orangelt
@@ -132,7 +132,7 @@ endif
 
 " Formatting options and null values for passthrough effect "
 " ---------------------------------------------------------------------
-    let s:back            = s:base03
+    let s:back            = '#2e323e'
     if &background == "light"
       let s:back            = s:base04
     endif
@@ -358,8 +358,8 @@ exe "hi! SpellBad"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_cyan
 exe "hi! SpellCap"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_cyan
 exe "hi! SpellLocal"     .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_cyan
 exe "hi! SpellRare"      .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_cyan
-exe "hi! StatusLine"     .s:fmt_none   .s:fg_base0  .s:bg_base02
-exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base0 .s:bg_base02 .s:fmt_none
+exe "hi! StatusLine"     .s:fmt_none   .s:fg_base0  .s:bg_purple
+exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base0 .s:bg_yellow .s:fmt_none
 exe "hi! TabLine"        .s:fmt_undr   .s:fg_base0  .s:bg_base03
 exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base03
 exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_blue   .s:bg_base03
@@ -374,6 +374,8 @@ if &background == "light"
   exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_cyan
   exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
   exe "hi! String"         .s:fmt_none   .s:fg_green .s:bg_none
+exe "hi! StatusLine"     .s:fmt_none   .s:fg_base0  .s:bg_cyan
+exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base0 .s:bg_blue .s:fmt_none
 endif
 
 " vim syntax highlighting
