@@ -1,6 +1,8 @@
 # Ariake Vim Color theme
 
-Ariake dark is a post of the great Atom theme. It is not a direct port but is pretty close.
+Ariake dark and light is a post of the great Atom theme. It is not a direct port but is pretty close.
+
+Included are iterm and alacritty themes
 
 ## Installation
 
@@ -26,7 +28,7 @@ For vim, add the following to your `.vimrc`.
 colorscheme ariake
  ```
 
-For neovim, add the following to your `.nvimrc`.
+For neovim, add the following to your `.init.vim`.
 
 
 ```viml
@@ -36,31 +38,26 @@ endif
 
 " Theme
 syntax enable
+set background=dark
+" For the light theme
+" set background=light
 colorscheme ariake
 ```
 
 ## Vim
 
-I have concetrated on the languages I write (JS,TS, Docker, JSON) but should be ok for others. If not drop my a line in the issues and let me know.
- 
-I will add more languages as I need them but happpy to accept PRs.
+I have concentrated on the languages I write (JS,TS, Docker, JSON) but should be ok for others. If not drop my a line in the issues and let me know.
 
-This theme leans of [vim-polyglot](https://github.com/sheerun/vim-polyglot) for the languages support
+I will add more languages as I need them but happy to accept PRs.
+
+This theme leans on [vim-polyglot](https://github.com/sheerun/vim-polyglot) for the languages support
 
 ### JS
 ![js](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/js.png)
 
 ### TS
 
-![ts](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/ts.png)
-
-### Docker
-
-![docker](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/docker.png)
-
-### JSON
-
-![json](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/json.png)
+![ts](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/tsx.png)
 
 ## Iterm2
 

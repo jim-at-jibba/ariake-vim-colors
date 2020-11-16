@@ -580,7 +580,7 @@ exe "hi! TSOperator"                  .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! TSKeyword"                   .s:fmt_ital   .s:fg_purple     .s:bg_none
 exe "hi! TSVariableBuiltin"           .s:fmt_ital   .s:fg_bluelt     .s:bg_none
 exe "hi! TSTag"                       .s:fmt_none   .s:fg_orange     .s:bg_none
-exe "hi! TSLabel"                     .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSLabel"                     .s:fmt_none   .s:fg_purple     .s:bg_none
 
 if &background == "light"
   exe "hi! TSString"                    .s:fmt_none   .s:fg_green     .s:bg_none

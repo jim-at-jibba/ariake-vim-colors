@@ -1,0 +1,33 @@
+# Colors (Ariake Light)
+colors:
+  # Default colors
+  primary:
+    background: '#fafafa'
+    foreground: '#7d7edc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#1b2b34'
+    cursor: '#dda2f6'
+
+  # Normal colors
+  normal:
+    black:   '#546d79'
+    red:     '#7d7edc'
+    green:   '#69f0ad'
+    yellow:  '#85b1df'
+    blue:    '#4d89ca'
+    magenta: '#dda2f6'
+    cyan:    '#93ddfb'
+    white:   '#fefefe'
+
+  # Bright colors
+  bright:
+    black:   '#b0bec4'
+    red:     '#7d7edc'
+    green:   '#69f0ad'
+    yellow:  '#85b1df'
+    blue:    '#4d89ca'
+    magenta: '#dda2f6'
+    cyan:    '#93ddfb'
+    white:   '#fefefe'

@@ -1,0 +1,34 @@
+# Ariake Dark
+colors:
+  # Default colors
+  primary:
+    background: '#292d36'
+    foreground: '#eceef0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#1b2b34'
+    cursor: '#dda2f6'
+    # cursor: '#edeeed'
+
+  # Normal colors
+  normal:
+    black:   '#546d79'
+    red:     '#7d7edc'
+    green:   '#69f0ad'
+    yellow:  '#85b1df'
+    blue:    '#4d89ca'
+    magenta: '#dda2f6'
+    cyan:    '#93ddfb'
+    white:   '#fefefe'
+
+  # Bright colors
+  bright:
+    black:   '#546d79'
+    red:     '#7d7edc'
+    green:   '#69f0ad'
+    yellow:  '#85b1df'
+    blue:    '#4d89ca'
+    magenta: '#dda2f6'
+    cyan:    '#93ddfb'
+    white:   '#fefefe'
