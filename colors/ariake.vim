@@ -68,7 +68,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:bluelt    = "#85b1df"
   let s:purpledk  = "#504f84"
   let s:purple    = "#7f7ce3"
-  let s:pinkdk    = "#986da9"
+  let s:pinkdk    = "#a96fed"
   let s:pink      = "#e89dfc"
   let s:bluedk    = "#79829f"
   let s:yellow    = "#85b1df"
@@ -191,7 +191,7 @@ exe "let s:fg_green     = ' ".s:vmode."fg=".s:green       ."'"
 
 if &background == "light"
   exe "let s:fg_base00    = ' ".s:vmode."fg=".s:pink      ."'"
-  exe "let s:fg_base0     = ' ".s:vmode."fg=".s:purple       ."'"
+  exe "let s:fg_base0     = ' ".s:vmode."fg=".s:bluelt       ."'"
 endif
 
 exe "let s:fmt_none     = ' ".s:vmode."=NONE".          " term=NONE".    "'"
@@ -374,8 +374,8 @@ if &background == "light"
   exe "hi! CursorLine"     .s:fmt_undr   .s:fg_none   .s:bg_cyan
   exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
   exe "hi! String"         .s:fmt_none   .s:fg_green .s:bg_none
-exe "hi! StatusLine"     .s:fmt_none   .s:fg_base0  .s:bg_cyan
-exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base0 .s:bg_blue .s:fmt_none
+  exe "hi! StatusLine"     .s:fmt_none   .s:fg_base0  .s:bg_cyan
+  exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base0 .s:bg_blue .s:fmt_none
 endif
 
 " vim syntax highlighting
@@ -518,3 +518,74 @@ exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow   .s:bg_none
 " ---------------------------------------------------------------------
 exe "hi! htmlTagName"                 .s:fmt_none   .s:fg_bluelt   .s:bg_none
 exe "hi! htmlArg"                     .s:fmt_ital   .s:fg_pink     .s:bg_none
+
+" TreeSitter stuff
+" ?
+exe "hi! TSAnnotation"                .s:fmt_ital   .s:fg_green     .s:bg_none
+" ?
+exe "hi! TSAttribute"                 .s:fmt_ital   .s:fg_green     .s:bg_none
+exe "hi! TSBoolean"                   .s:fmt_ital   .s:fg_pink     .s:bg_none
+" ?
+exe "hi! TSCharacter"                 .s:fmt_ital   .s:fg_base0     .s:bg_none
+" if statements and default
+exe "hi! TSConditional"               .s:fmt_none   .s:fg_purple     .s:bg_none
+" CONSTANTS
+exe "hi! TSConstant"                  .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSConstBuiltin"              .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! TSConstMacro"                .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSEmphasis"                  .s:fmt_none   .s:fg_base0     .s:bg_none
+" ?
+exe "hi! TSError"                     .s:fmt_none   .s:fg_green     .s:bg_none
+"
+exe "hi! TSException"                 .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSField"                     .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSFloat"                     .s:fmt_ital   .s:fg_base0     .s:bg_none
+exe "hi! TSFuncBuiltin"               .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSFuncMacro"                 .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSKeywordFunction"           .s:fmt_ital   .s:fg_green     .s:bg_none
+exe "hi! TSKeywordOperator"           .s:fmt_ital   .s:fg_purpledk     .s:bg_none
+exe "hi! TSLiteral"                   .s:fmt_ital   .s:fg_green     .s:bg_none
+exe "hi! TSNamespace"                 .s:fmt_ital   .s:fg_base0     .s:bg_none
+exe "hi! TSNumber"                    .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! TSParameterReference"        .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSPunctSpecial"              .s:fmt_none   .s:fg_bluelt     .s:bg_none
+exe "hi! TSRepeat"                    .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSString"                    .s:fmt_none   .s:fg_cyan     .s:bg_none
+
+
+exe "hi! TSStringEscape"              .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSStringRegex"               .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSStrong"                    .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSStructure"                 .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSText"                      .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSTitle"                     .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSTypeBuiltin"               .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! TSUnderline"                 .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSURI"                       .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! TSInclude"                   .s:fmt_ital   .s:fg_purple     .s:bg_none
+" seems to be all {}
+exe "hi! TSPunctBracket"              .s:fmt_none   .s:fg_bluelt     .s:bg_none
+exe "hi! TSPunctDelimiter"            .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSParameter"                 .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSType"                      .s:fmt_none   .s:fg_purple     .s:bg_none
+exe "hi! TSFunction"                  .s:fmt_none   .s:fg_base0     .s:bg_none
+"
+exe "hi! TSTagDelimiter"              .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSProperty"                  .s:fmt_none   .s:fg_base0     .s:bg_none
+exe "hi! TSMethod"                    .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! TSParameter"                 .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! TSConstructor"               .s:fmt_ital   .s:fg_pinkdk     .s:bg_none
+exe "hi! TSVariable"                  .s:fmt_ital   .s:fg_bluelt     .s:bg_none
+exe "hi! TSOperator"                  .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! TSKeyword"                   .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! TSVariableBuiltin"           .s:fmt_ital   .s:fg_bluelt     .s:bg_none
+exe "hi! TSTag"                       .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSLabel"                     .s:fmt_none   .s:fg_orange     .s:bg_none
+
+if &background == "light"
+  exe "hi! TSString"                    .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! TSOperator"                  .s:fmt_none   .s:fg_purple     .s:bg_none
+  exe "hi! TSPunctDelimiter"            .s:fmt_none   .s:fg_blue     .s:bg_none
+  exe "hi! TSFunction"                  .s:fmt_none   .s:fg_pink     .s:bg_none
+endif
+" }}}
