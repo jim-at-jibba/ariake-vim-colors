@@ -4,6 +4,7 @@ Ariake dark and light is a post of the great Atom theme. It is not a direct port
 
 Included are iterm and alacritty themes
 
+I have recently added Treesitter support. This is still WIP and will be improved over the coming weeks.
 ## Installation
 
 All major plugin managers for vim/nvim are supported
