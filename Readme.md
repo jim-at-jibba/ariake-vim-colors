@@ -53,12 +53,12 @@ I will add more languages as I need them but happy to accept PRs.
 
 This theme leans on [vim-polyglot](https://github.com/sheerun/vim-polyglot) for the languages support
 
-### JS
-![js](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/js.png)
 
 ### TS
-
 ![ts](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/tsx.png)
+
+### PHP
+![php](https://github.com/jim-at-jibba/ariake-vim-colors/blob/master/assets/php.png)
 
 ## Iterm2
 

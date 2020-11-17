@@ -519,6 +519,28 @@ exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow   .s:bg_none
 exe "hi! htmlTagName"                 .s:fmt_none   .s:fg_bluelt   .s:bg_none
 exe "hi! htmlArg"                     .s:fmt_ital   .s:fg_pink     .s:bg_none
 
+" BarBar
+" ---------------------------------------------------------------------
+exe "hi! BufferCurrent"                     .s:fmt_none   .s:fg_green     .s:bg_none
+exe "hi! BufferCurrentMod"                  .s:fmt_ital   .s:fg_cyan     .s:bg_none
+exe "hi! BufferCurrentSign"                 .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! BufferCurrentTarget"               .s:fmt_none   .s:fg_orange     .s:bg_none
+if &background == 'light'
+  exe "hi! BufferCurrent"                     .s:fmt_none   .s:fg_green     .s:bg_none
+  exe "hi! BufferCurrentMod"                  .s:fmt_ital   .s:fg_cyan     .s:bg_none
+  exe "hi! BufferCurrentSign"                 .s:fmt_ital   .s:fg_green     .s:bg_none
+  exe "hi! BufferCurrentTarget"               .s:fmt_ital   .s:fg_green     .s:bg_none
+endif
+exe "hi! BufferVisible"                     .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! BufferVisibleMod"                  .s:fmt_bold   .s:fg_cyan     .s:bg_none
+exe "hi! BufferVisibleSign"                 .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! BufferVisibleTarget"               .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! BufferInactive"                    .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! BufferInactiveSign"                .s:fmt_ital   .s:fg_pink     .s:bg_none
+exe "hi! BufferInactiveTarget"              .s:fmt_ital   .s:fg_cyan     .s:bg_none
+
+
+
 " TreeSitter stuff
 " ?
 exe "hi! TSAnnotation"                .s:fmt_ital   .s:fg_green     .s:bg_none
@@ -530,7 +552,7 @@ exe "hi! TSCharacter"                 .s:fmt_ital   .s:fg_base0     .s:bg_none
 " if statements and default
 exe "hi! TSConditional"               .s:fmt_none   .s:fg_purple     .s:bg_none
 " CONSTANTS
-exe "hi! TSConstant"                  .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSConstant"                  .s:fmt_none   .s:fg_blue     .s:bg_none
 exe "hi! TSConstBuiltin"              .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! TSConstMacro"                .s:fmt_none   .s:fg_base0     .s:bg_none
 exe "hi! TSEmphasis"                  .s:fmt_none   .s:fg_base0     .s:bg_none
@@ -587,5 +609,6 @@ if &background == "light"
   exe "hi! TSOperator"                  .s:fmt_none   .s:fg_purple     .s:bg_none
   exe "hi! TSPunctDelimiter"            .s:fmt_none   .s:fg_blue     .s:bg_none
   exe "hi! TSFunction"                  .s:fmt_none   .s:fg_pink     .s:bg_none
+  exe "hi! TSConstant"                  .s:fmt_none   .s:fg_cyan     .s:bg_none
 endif
 " }}}
