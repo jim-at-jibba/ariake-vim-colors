@@ -1,4 +1,4 @@
-" Name:     Ariake vim colorscheme
+" Name:     Ariake vim colorschem
 " Author:   James Best <me@jamesbest.tech>
 "
 " URL:
@@ -8,6 +8,7 @@
 "
 " https://styles.ulysses.app/themes/ariake-dark-LJr
 " https://github.com/arcticicestudio/nord-vim/blob/develop/colors/nord.vim
+" https://github.com/sainnhe/edge/blob/master/colors/edge.vim
 "
 " TODO add citylights icon support via https://github.com/ryanoasis/vim-devicons
 " !IMPORTANT: Much of the syntax used is taken from [vim polyglot](). You should
@@ -36,6 +37,8 @@
 " yellow     #85b1df                           orangelt
 " orange     #fbdf00
 " green      #69f0ad                           green
+" red        #f5331d
+" git green  #1bf777
 
 " *these are the names of the first 16 ANSI colors terminals allow you to change
 
@@ -74,6 +77,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let s:yellow    = "#85b1df"
   let s:orange    = "#fbdf00"
   let s:green     = "#48afa7"
+  let s:red       = "#f5331d"
+  let s:greenlt   = "#1bf777"
 
 else " 256 xterm colors as backup
   let s:vmode     = "cterm"
@@ -102,6 +107,8 @@ if has("nvim")
   let g:terminal_color_13 = "#986da9" " brreddk
   let g:terminal_color_14 = "#70E1E8" " brcyan
   let g:terminal_color_15 = "#d9e1ff" " brwhite
+  let g:terminal_color_16 = "#f5331d" " red
+  let g:terminal_color_17 = "#1bf777" " greenlt
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_15
   if &background == "light"
@@ -169,6 +176,8 @@ exe "let s:bg_bluedk    = ' ".s:vmode."bg=".s:bluedk      ."'"
 exe "let s:bg_yellow    = ' ".s:vmode."bg=".s:yellow      ."'"
 exe "let s:bg_orange    = ' ".s:vmode."bg=".s:orange      ."'"
 exe "let s:bg_green     = ' ".s:vmode."bg=".s:green       ."'"
+exe "let s:bg_red       = ' ".s:vmode."bg=".s:red         ."'"
+exe "let s:bg_greenlt   = ' ".s:vmode."bg=".s:greenlt     ."'"
 
 exe "let s:fg_none      = ' ".s:vmode."fg=".s:none        ."'"
 exe "let s:fg_back      = ' ".s:vmode."fg=".s:back        ."'"
@@ -188,6 +197,8 @@ exe "let s:fg_bluedk    = ' ".s:vmode."fg=".s:bluedk      ."'"
 exe "let s:fg_yellow    = ' ".s:vmode."fg=".s:yellow      ."'"
 exe "let s:fg_orange    = ' ".s:vmode."fg=".s:orange      ."'"
 exe "let s:fg_green     = ' ".s:vmode."fg=".s:green       ."'"
+exe "let s:fg_red       = ' ".s:vmode."fg=".s:red         ."'"
+exe "let s:fg_greenlt   = ' ".s:vmode."fg=".s:greenlt     ."'"
 
 if &background == "light"
   exe "let s:fg_base00    = ' ".s:vmode."fg=".s:pink      ."'"
@@ -225,6 +236,7 @@ if has("gui_running")
   exe "let s:sp_yellow    = ' guisp=".s:yellow      ."'"
   exe "let s:sp_orange    = ' guisp=".s:orange      ."'"
   exe "let s:sp_green     = ' guisp=".s:green       ."'"
+  exe "let s:sp_red       = ' guisp=".s:red         ."'"
 else
   let s:sp_none       = ""
   let s:sp_back       = ""
@@ -518,6 +530,13 @@ exe "hi! jsonKeyword"                 .s:fmt_none   .s:fg_yellow   .s:bg_none
 " ---------------------------------------------------------------------
 exe "hi! htmlTagName"                 .s:fmt_none   .s:fg_bluelt   .s:bg_none
 exe "hi! htmlArg"                     .s:fmt_ital   .s:fg_pink     .s:bg_none
+"
+" ALE
+" ---------------------------------------------------------------------
+exe "hi! ALEError"                 .s:fmt_none   .s:fg_orange   .s:bg_none
+exe "hi! ALEWarning"               .s:fmt_none   .s:fg_bluelt   .s:bg_none
+exe "hi! ALEErrorSign"             .s:fmt_none   .s:fg_orange   .s:bg_none
+exe "hi! ALEWarningSign"           .s:fmt_none   .s:fg_bluelt   .s:bg_none
 
 " BarBar
 " ---------------------------------------------------------------------
@@ -539,7 +558,32 @@ exe "hi! BufferInactive"                    .s:fmt_ital   .s:fg_pink     .s:bg_n
 exe "hi! BufferInactiveSign"                .s:fmt_ital   .s:fg_pink     .s:bg_none
 exe "hi! BufferInactiveTarget"              .s:fmt_ital   .s:fg_cyan     .s:bg_none
 
+exe "hi! diffAdded"                   .s:fmt_none   .s:fg_greenlt    .s:bg_none
+exe "hi! diffRemoved"                 .s:fmt_none   .s:fg_red      .s:bg_none
+exe "hi! diffChanged"                 .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! diffOldFile"                 .s:fmt_none   .s:fg_green    .s:bg_none
+exe "hi! diffNewFile"                 .s:fmt_none   .s:fg_cyan     .s:bg_none
+exe "hi! diffFile"                    .s:fmt_none   .s:fg_yellow   .s:bg_none
+exe "hi! diffLine"                    .s:fmt_none   .s:fg_base02    .s:bg_none
+exe "hi! diffIndexLine"               .s:fmt_none   .s:fg_yellow   .s:bg_none
 
+exe "hi! gitcommitSummary"            .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitUntracked"          .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitDiscarded"          .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitSelected"           .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitCommitUnmerged"           .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitOnBranch"           .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitArrow"              .s:fmt_none   .s:fg_base02     .s:bg_none
+exe "hi! gitcommitFile"               .s:fmt_none   .s:fg_base02     .s:bg_none
+
+exe "hi! SigniftSignAdd"               .s:fmt_none   .s:fg_greenlt     .s:bg_none
+exe "hi! SignifySignChange"            .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! SignifySignDelete"            .s:fmt_none   .s:fg_red     .s:bg_none
+exe "hi! SignifySignChangeDelete"      .s:fmt_none   .s:fg_yellow     .s:bg_none
+
+exe "hi! Sneak"           .s:fmt_none   .s:fg_purple     .s:bg_none
+exe "hi! SneakLabel"      .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! SneakScope"      .s:fmt_none   .s:fg_yellow     .s:bg_none
 
 " TreeSitter stuff
 " ?
@@ -601,7 +645,7 @@ exe "hi! TSVariable"                  .s:fmt_ital   .s:fg_bluelt     .s:bg_none
 exe "hi! TSOperator"                  .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! TSKeyword"                   .s:fmt_ital   .s:fg_purple     .s:bg_none
 exe "hi! TSVariableBuiltin"           .s:fmt_ital   .s:fg_bluelt     .s:bg_none
-exe "hi! TSTag"                       .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! TSTag"                       .s:fmt_none   .s:fg_purple     .s:bg_none
 exe "hi! TSLabel"                     .s:fmt_none   .s:fg_purple     .s:bg_none
 
 if &background == "light"
