@@ -581,6 +581,14 @@ exe "hi! SignifySignChange"            .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! SignifySignDelete"            .s:fmt_none   .s:fg_red     .s:bg_none
 exe "hi! SignifySignChangeDelete"      .s:fmt_none   .s:fg_yellow     .s:bg_none
 
+exe "hi! BufTabLineCurrent"            .s:fmt_none   .s:fg_base03     .s:bg_cyan
+exe "hi! BufTabLineActive"             .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! BufTabLineHidden"             .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! BufTabLineFill"               .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! BufTabLineModifiedCurrent"    .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! BufTabLineModifiedActive"     .s:fmt_none   .s:fg_yellow     .s:bg_none
+exe "hi! BufTabLineModifiedHidden"     .s:fmt_none   .s:fg_yellow     .s:bg_none
+
 exe "hi! Sneak"           .s:fmt_none   .s:fg_purple     .s:bg_none
 exe "hi! SneakLabel"      .s:fmt_none   .s:fg_pink     .s:bg_none
 exe "hi! SneakScope"      .s:fmt_none   .s:fg_yellow     .s:bg_none
