@@ -590,8 +590,32 @@ exe "hi! BufTabLineModifiedActive"     .s:fmt_none   .s:fg_yellow     .s:bg_none
 exe "hi! BufTabLineModifiedHidden"     .s:fmt_none   .s:fg_yellow     .s:bg_none
 
 exe "hi! Sneak"           .s:fmt_none   .s:fg_purple     .s:bg_none
-exe "hi! SneakLabel"      .s:fmt_none   .s:fg_pink     .s:bg_none
+exe "hi! SneakLabel"      .s:fmt_none   .s:fg_pink     .s:bg_bluelt
 exe "hi! SneakScope"      .s:fmt_none   .s:fg_yellow     .s:bg_none
+
+" FZF plugin
+exe "hi! fzf1"      .s:fmt_none   .s:fg_blue     .s:bg_none
+exe "hi! fzf2"      .s:fmt_ital   .s:fg_blue     .s:bg_none
+exe "hi! fzf3"      .s:fmt_none   .s:fg_orange     .s:bg_none
+exe "hi! fzfNormal"      .s:fmt_none   .s:fg_purple     .s:bg_none
+exe "hi! fzfFgPlus"      .s:fmt_ital   .s:fg_purple     .s:bg_none
+exe "hi! fzfBorder"      .s:fmt_none   .s:fg_cyan     .s:bg_none
+
+let g:fzf_colors = {
+  \  'fg':      ['fg', 'fzfNormal'],
+  \  'bg':      ['bg', 'Normal'],
+  \  'hl':      ['fg', 'Number'],
+  \  'fg+':     ['fg', 'fzfFgPlus'],
+  \  'bg+':     ['bg', 'Pmenu'],
+  \  'hl+':     ['fg', 'Number'],
+  \  'info':    ['fg', 'String'],
+  \  'border':  ['fg', 'fzfBorder'],
+  \  'prompt':  ['fg', 'fzf2'],
+  \  'pointer': ['fg', 'Exception'],
+  \  'marker':  ['fg', 'StorageClass'],
+  \  'spinner': ['fg', 'Type'],
+  \  'header':  ['fg', 'CursorLineNr']
+  \}
 
 " TreeSitter stuff
 " ?
