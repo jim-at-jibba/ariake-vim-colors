@@ -1,6 +1,6 @@
 # Ariake Vim Color theme
 
-*N.B. I have now ported this theme to Neovim with a new lua version which can be found [here](https://github.com/jim-at-jibba/ariake.nvim/tree/main)*
+**N.B. I have now ported this theme to Neovim with a new lua version which can be found [here](https://github.com/jim-at-jibba/ariake.nvim/tree/main)**
 
 Ariake dark and light is a post of the great Atom theme. It is not a direct port but is pretty close.
 
